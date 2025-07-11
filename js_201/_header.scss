@@ -1,0 +1,28 @@
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #53377A,	#252850	);
+    padding: 0;
+    width: 100%;
+    flex: 2;
+    nav{
+        flex-direction: row;
+        display: flex;
+        
+        justify-content: space-between;
+        align-items: center;
+    }
+    ul{
+        display: flex;
+        font-size: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        flex-direction: row;
+        gap: 30px;
+        color: white;
+        padding: 20px;
+    }
+    a:hover{
+        text-decoration: dotted;
+    }
+}
