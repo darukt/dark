@@ -1,0 +1,55 @@
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1A1A1A;
+    padding: 0;
+    width: 100%;
+    flex: 2;
+    nav{
+        flex-direction: row;
+        display: flex;
+        gap: 450px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    ul{
+        display: flex;
+        font-size: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        flex-direction: row;
+        gap: 30px;
+        color: white;
+        padding: 20px;
+    }
+    a:hover{
+        text-decoration: dotted;
+
+    }
+    #discount-section{
+        #apply-discount-btn{
+            background-color:  #F5F5F5;
+            width: 120px;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        text-align: center;
+        gap: 10px;
+        
+        #discount-input{
+            width: 180px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #CCCCCC;
+            font-size: 16px;
+        }
+    }
+    
+   
+}

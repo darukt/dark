@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="scss.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <span id="logo"><a href="forgot.html"><img src="https://www.freeiconspng.com/uploads/blank-logo-design-for-brand-13.png" width="30px" height="30px"></a></span>
+                <ul>
+                    <li><a href="#contacts">Контакты</a></li>
+                    <li><a href="#content">Контент</a></li>
+                    <li><a href="#about">О Нас</a></li>
+                    <li><a href=#></a></li>
+                    <li><button id="popup">Настройки</button></li>
+                </ul>
+                <div id="discount-section" >
+                  <input type="text" id="discount-input" placeholder="Промокод">
+                  <button id="apply-discount-btn">Подтвердить</button>
+                </div>
+            </nav>
+        </header>
+        <main>
+        <div class="based">
+        <section id="hero-page">
+         <h2>Почему выбирают нас</h2>
+  <ul>
+    <li>🎓 Более 10 лет опыта в обучении</li>
+    <li>💼 80% выпускников находят работу</li>
+    <li>👨‍🏫 Опытные преподаватели</li>
+    <li>🛠 Практические проекты и стажировки</li>
+  </ul>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.9059886790496!2d37.561537699999995!3d55.760135299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a2dd0998fd7%3A0xd6742a6406ca2240!2sGetCourse!5e0!3m2!1sen!2skz!4v1752234555062!5m2!1sen!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      
+
+        </section>
+        
+        </div>
+        <br>
+  <section id="content">
+  <div class="button-cards">
+    <button id="all-courses">Все курсы</button>
+    <button id="programming">💻Программирование</button>
+    <button id="marketing">📱Маркетинг</button>
+    <button id="web-programming">💻Веб-разработка></button>
+    <button id="design">🎨Дизайн</button>
+</div>
+  <div class="cards-course">
+    <div class="course-card"  data-price="20000" data-category="design">
+    <h3>🎨Дизайн интерфейсов</h3>
+    <p><strong>Уровень:</strong>Продвинутый</p>
+    <p>Освойте инструменты UX/UI дизайна и создавайте удобные интерфейсы.</p>
+    <p><strong>Длительность:</strong> 4 месяца</p>
+    <p class="price"><strong>Стоимость:</strong> 20 000 ₽</p>
+    <button>Записаться</button>
+  </div>
+  <div class="course-card" data-price="12000" data-category="marketing">
+    <h3>📱Маркетинг в социальных сетях</h3>
+    <p><strong>Уровень:</strong>Средний</p>
+    <p>Научитесь продвигать бизнес в Instagram, Facebook и TikTok.</p>
+    <p><strong>Длительность:</strong> 2 месяца</p>
+    <p class="price"><strong>Стоимость:</strong> 12 000 ₽</p>
+    <button>Записаться</button>
+  </div>
+  <div class="course-card" data-price="15000" data-category="programming">
+    <h3>💻Веб-разработка</h3>
+    <p><strong>Уровень:</strong> Начинающий</p>
+    <p>Изучите основы HTML, CSS и JavaScript и создайте свой первый сайт.</p>
+    <p><strong>Длительность:</strong> 3 месяца</p>
+    <p class="price"><strong>Стоимость:</strong> 15 000 ₽</p>
+    <button>Записаться</butto n>
+  </div>
+  <div class="course-card" data-price="15000" data-category="design">
+    <h3>🎨Дизайн интерфейсов</h3>
+    <p><strong>Уровень:</strong> Средний</p>
+    <p>Освойте инструменты UX/UI дизайна и создавайте удобные интерфейсы.</p>
+    <p><strong>Длительность:</strong> 3 месяца</p>
+    <p class="price"><strong>Стоимость:</strong> 15 000 ₽</p>
+    <button>Записаться</button>
+  </div>
+  <div class="course-card" data-price="16000" data-category="marketing">
+    
+    <h3>📱Маркетинг в социальных сетях</h3>
+    <p><strong>Уровень:</strong>Начинающий</p>
+    <p>Научитесь продвигать бизнес в Instagram, Facebook и TikTok.</p>
+    <p><strong>Длительность:</strong> 2 месяца</p>
+    <p class="price"><strong>Стоимость:</strong> 16 000 ₽</p>
+    <button>Записаться</button>
+  </div>
+  </div>
+</section>
+<br>
+<section id="contacts">
+    <div class="reviews-container">
+    <h2>Отзывы клиентов</h2>
+
+    <div class="review">
+      <div class="name">Анна Петрова</div>
+      <div class="date">1 августа 2025</div>
+      <div class="text">Очень понравился сервис! Всё быстро, удобно и красиво. Спасибо!</div>
+    </div>
+
+    <div class="review">
+      <div class="name">Игорь Смирнов</div>
+      <div class="date">30 июля 2025</div>
+      <div class="text">Заказал по акции — промокод сработал отлично. Буду заказывать ещё!</div>
+    </div>
+
+    <div class="review">
+      <div class="name">Мария Ли</div>
+      <div class="date">28 июля 2025</div>
+      <div class="text">Удобный сайт и понятный интерфейс. Всё на высшем уровне!</div>
+    </div>
+    <div class="type-review">
+      <label for="name">Имя</label>
+      <input type="text" placeholder="Введите ваше имя" id="name">
+      <label for="date">дата</label>
+      <input type="date" id="date" placeholder="Введите дату">
+      <label for="text">Отзыв</label>
+      <textarea id="text" placeholder="Введите ваш отзыв"></textarea>
+      <button>Отправить</button>
+    </div>
+  </div>
+</section>
+        </main>
+        <div id="popup-container">
+            <div id="popup-content">
+                <span id="close-popup"><button class="closepopup">&times;</button></span>
+                <h2>Настройки</h2>
+                <form id="settings-form">
+                    <label for="theme">Тема:</label>
+                    <select id="theme">
+                        <option value="light">Светлая</option>
+                        <option value="dark">Темная</option>
+                    </select>
+    
+                    <button type="submit">Сохранить</button>
+                </form>
+            </div>
+    </div>
+    <script src="kon.js"></script>
+</body>
+</html>

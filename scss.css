@@ -1,0 +1,235 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1A1A1A;
+  padding: 0;
+  width: 100%;
+  flex: 2;
+}
+header nav {
+  flex-direction: row;
+  display: flex;
+  gap: 550px;
+  justify-content: space-between;
+  align-items: center;
+}
+header ul {
+  display: flex;
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  flex-direction: row;
+  gap: 30px;
+  color: white;
+  padding: 20px;
+}
+header a:hover {
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
+}
+header #discount-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  text-align: center;
+  gap: 10px;
+}
+header #discount-section #apply-discount-btn {
+  background-color: #F5F5F5;
+  width: 120px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+header #discount-section #discount-input {
+  width: 180px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
+  font-size: 16px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  min-height: calc(100vh - 70px);
+  background-color: #121212;
+  flex-direction: column;
+}
+main .based {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+main #hero-page {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  flex: 4;
+  background-color: #1A1A1A;
+  padding: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+}
+main #hero-page h2 {
+  color: #CCCCCC;
+}
+main #hero-page iframe {
+  margin-top: 0;
+}
+main .why-us {
+  background-color: #1A1A1A;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+}
+main .why-us h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+main .why-us ul {
+  list-style-type: none;
+  padding: 0;
+}
+main .why-us ul li {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+main #content {
+  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+main #content .course-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+main .course-card {
+  background-color: #2C2C2C;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+main .course-card button {
+  background-color: #4F46E5;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+main .reviews-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 300px;
+  color: white;
+  background-color: #121212;
+}
+main .reviews-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+main .reviews-container .review {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+  background-color: #2C2C2C;
+  padding: 20px;
+  border-radius: 10px;
+}
+main .reviews-container #type-review {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main .reviews-container #type-review input, main .reviews-container #type-review textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
+  font-size: 16px;
+}
+main .reviews-container #type-review button {
+  background-color: #4F46E5;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+#container {
+  max-height: 100%;
+  max-width: 100%;
+  padding: 0;
+  overflow-x: none;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 10px;
+}
+#popup-container #popup-content {
+  background-color: #2C2C2C;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}/*# sourceMappingURL=scss.css.map */
