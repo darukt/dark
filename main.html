@@ -99,27 +99,28 @@
       <div class="name">Анна Петрова</div>
       <div class="date">1 августа 2025</div>
       <div class="text">Очень понравился сервис! Всё быстро, удобно и красиво. Спасибо!</div>
+      <div class="id">id: 42399313</div>
     </div>
 
     <div class="review">
       <div class="name">Игорь Смирнов</div>
       <div class="date">30 июля 2025</div>
       <div class="text">Заказал по акции — промокод сработал отлично. Буду заказывать ещё!</div>
+      <div class="id">id: 12399313</div>
     </div>
 
     <div class="review">
       <div class="name">Мария Ли</div>
       <div class="date">28 июля 2025</div>
       <div class="text">Удобный сайт и понятный интерфейс. Всё на высшем уровне!</div>
+      <div class="id">id: 41399313</div>
     </div>
     <div class="type-review">
       <label for="name">Имя</label>
       <input type="text" placeholder="Введите ваше имя" id="name">
-      <label for="date">дата</label>
-      <input type="date" id="date" placeholder="Введите дату">
       <label for="text">Отзыв</label>
       <textarea id="text" placeholder="Введите ваш отзыв"></textarea>
-      <button>Отправить</button>
+      <button id="makeReview">Отправить</button>
     </div>
   </div>
 </section>
@@ -142,6 +143,8 @@
                 </form>
             </div>
     </div>
-    <script src="main.js"></script>
+    <script type="module" src="basedFunctions.js"></script>
+    <script type="module" src="main.js"></script>
+
 </body>
 </html>

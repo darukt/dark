@@ -1,3 +1,5 @@
+import { littleHelper, getCookie, appendChildrens } from "./basedFunctions.js";
+
 const cards = document.querySelectorAll('.course-card')
 const popup = document.getElementById('popup');
 const closePopup = document.querySelector('.closepopup');
@@ -7,6 +9,40 @@ const design = document.getElementById('design');
 const courses = document.getElementById('all-courses')
 const webprogramming = document.getElementById('web-programming');
 const loginButton = document.getElementById('login-button');
+const nameInput = document.getElementById('name');
+const textInput = document.getElementById('text');
+const makeReviewButton = document.getElementById('makeReview');
+makeReviewButton.addEventListener('click', function() {
+  const review = littleHelper('div', 'review'); // Создаем новый div для отзыва
+  const nameDiv = littleHelper('div', 'name'); // Создаем div для имени
+  const textDiv = littleHelper('div', 'text'); // Создаем div для текста отзыва
+  const idDiv = littleHelper('div', 'id'); // Создаем div для ID отзыва
+  const dateDiv = littleHelper('div', 'date'); // Создаем div для даты отзыва
+  const name = nameInput.value.trim(); // Получаем name пользователя
+  const text = textInput.value.trim(); // Получаем text отзыва
+  const id = Date.now(); // Генерируем случайный ID отзыва
+  const date = new Date().toLocaleDateString(); // Получаем текущую дату в формате "дд.мм.гггг"
+  const saveReview = {
+    "name": name,
+    "text": text,
+    "id": id,
+    "date": date
+  }
+  if (!name || !text) { // Проверяем, что все поля заполнены
+    alert('Пожалуйста, заполните все поля.'); // Если нет, показываем предупреждение
+    return; // Прерываем выполнение функции
+  }
+  dateDiv.textContent = date; // Устанавливаем текст даты
+  nameDiv.textContent = name; // Устанавливаем текст имени
+  textDiv.textContent = text; // Устанавливаем текст отзыва
+  idDiv.textContent = `id: ${id}`; // Устанавливаем ID отзыва
+  appendChildrens(review, nameDiv, dateDiv, textDiv, idDiv); // Добавляем все элементы в новый div отзыва
+  document.querySelector('.reviews-container').appendChild(review); // Добавляем новый отзыв в контейнер с отзывами
+  alert(`Отзыв от ${name} (ID: ${id}) успешно отправлен!`); // Показываем сообщение об успешной отправке отзыва
+  const existingReviews = JSON.parse(localStorage.getItem("reviews")) || []; // Получаем существующие отзывы из localStorage
+  existingReviews.push(saveReview); // Добавляем новый отзыв в массив существующих отзывов
+  localStorage.setItem("reviews", JSON.stringify(existingReviews)); // Сохраняем обновленный массив отзывов в localStorage
+});
 const categories = {
   programming,
   design,
@@ -20,16 +56,14 @@ const promoCodes = {
   'SPRING10': 10
 };
 loginButton.addEventListener('click', function() { // Добавляет слушатель на кнопку входа
-  window.location.href = 'login.html'; // Перенаправляет на страницу входа
+  if (getCookie('login' === 'true')){
+    document.cookie = 'login=false; path=/; max-age=0'
+    document.cookie = 'username=; path=/; max-age=0'; // Удаляет куки login
+  }
+  else{
+    window.location.href = 'login.html'; // Перенаправляет на страницу входа
+  } // Перенаправляет на страницу входа
 });
-function getCookie(name) { 
-  const value = `; ${document.cookie}`; // получает куки и ставит перед ним разделитель если есть ключ = значение
-  const parts = value.split(`; ${name}=`); // разделяет стркоу на части по разделителю
-  if (parts.length === 2) {
-    return parts.pop().split(';').shift() // возвращает значение куки, удаляя все лишнее после равно
-  };
-  return null;
-}
 if (getCookie('login') === 'true') { // если куки login = true он показывает имя пользователя
   const userName = document.createElement('span');
   userName.style.width = '100px';
@@ -40,11 +74,7 @@ if (getCookie('login') === 'true') { // если куки login = true он по
   userName.style.fontSize = '16px';
   userName.textContent = getCookie('username');
   document.querySelector("nav").appendChild(userName); // добавляет юзер в навигацию
-    loginButton.textContent = 'Выйти'; // меняет текст внутри кнопки на выйти
-    loginButton.addEventListener('click', function() { // Добавляет слушателя который login = false а значит удаляет куки
-      document.cookie = 'login=false; path=/; max-age=0'; // удаляет куки login
-      window.location.href = 'main.html'; // Перенаправляет на главную страницу
-    });
+  loginButton.textContent = 'Выйти'; // меняет текст внутри кнопки на выйти
 }
 
 function checkPromoCode() {
@@ -84,6 +114,24 @@ function filterCourses(category) {  // Функция для фильтраци�
 }
 window.onload = function() { // При загрузке страницы проверяем наличие сохраненного промокода
   const savedCode = localStorage.getItem('userPromo'); // Получаем сохраненный промокод из localStorage
+  const savedReview = localStorage.getItem('reviews'); // Получаем сохраненный отзыв из localStorage
+  if (savedReview) { // Если отзыв существует в localStorage
+    const reviews = JSON.parse(savedReview); // Парсим сохраненный отзыв
+    const container = document.querySelector('.reviews-container'); // Получаем контейнер для отзывов
+    reviews.forEach(review => {
+      const reviewDiv = littleHelper('div', 'review'); // Создаем новый div для отзыва
+      const nameDiv = littleHelper('div', 'name'); // Создаем div для имени
+      const textDiv = littleHelper('div', 'text'); // Создаем div для текста отзыва
+      const idDiv = littleHelper('div', 'id'); // Создаем div для ID отзыва
+      const dateDiv = littleHelper('div', 'date'); // Создаем div для даты отзыва
+      nameDiv.textContent = review.name; // Устанавливаем текст имени
+      textDiv.textContent = review.text; // Устанавливаем текст отзыва
+      idDiv.textContent = `id: ${review.id}`; // Устанавливаем ID отзыва
+      dateDiv.textContent = review.date; // Устанавливаем дату отзыва
+      appendChildrens(reviewDiv, nameDiv, dateDiv, textDiv, idDiv); // Добавляем все элементы в новый div отзыва
+      container.appendChild(reviewDiv); // Добавляем новый отзыв в контейнер с отзывами
+    })
+  }
   if (savedCode && promoCodes.hasOwnProperty(savedCode)) { // Если промокод существует в promoCodes
     document.getElementById('discount-input').value = savedCode; // Заполняем поле ввода промокода
     checkPromoCode();
