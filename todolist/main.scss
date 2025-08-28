@@ -1,0 +1,42 @@
+@use 'aside' as *;
+@use 'mainSide' as *;
+$backgroundColor: #f0f0f0;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+#container{
+    background-color: $backgroundColor;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#box-of-todo{
+    background-color: white;
+    width: 85%;
+    height: 90%;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#right-side{
+    flex: 1;
+    height: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $backgroundColor;
+    margin-right: 20px;
+    opacity: 0;
+    border-radius: 10px;
+}

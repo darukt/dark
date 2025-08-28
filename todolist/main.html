@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="container">
+        <div id="box-of-todo">
+        <aside>
+            <div id="box">
+                <div id="Menu">
+                    <h3>Menu</h3>
+                    <input type="text" id="input" placeholder="Search...">
+                </div>
+                <div id="tasks">
+                    <h4>Tasks</h4>
+                    <ul id="task-list">
+                        <li>Upcoming</li>
+                        <li>Today</li>
+                        <li>Calendar</li>
+                        <li>Sticky Wall</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <main>
+            <div id="Date">
+                <h1>Today</h1>
+            </div>
+            <div id="tasks">
+                <h2>My Tasks</h2>
+            </div>
+            <div id="current-tasks">
+                <ul id="current-task-list">
+                    <li><input type="checkbox">Feed Dogs<br><span>7:00</span></li>
+                    <li><input type="checkbox">Do something good</li>
+                    <li><input type="checkbox">Buy some food</li>
+                    <li><input type="checkbox">Go on Work<br><span>8:30</span></li>
+                </ul>
+            </div>
+            <div id="add-task">
+                <button id="Add-Task-List">&plus; Add Task</button>
+            </div>
+        </main>
+        <div id="right-side">
+            <button id="closePopup"><span>&#10006;</span></button>
+            <div id="profile">
+            </div>
+            <div id="add-task">
+                <h3>Add New Task List</h3>
+                <input type="text" id="new-task-list" placeholder="Task List Name">
+                <input type="time" id="task-time">
+                <div id="buttons">
+                <button id="cancel">Cancel</button>
+                <button id="create-task-list">Create</button>
+                </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
